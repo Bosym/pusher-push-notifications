@@ -8,11 +8,11 @@ use Illuminate\Notifications\Notifiable;
 use NotificationChannels\PusherPushNotifications\PusherChannel;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\PusherPushNotifications\PusherMessage;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Mockery;
-use Pusher;
+use Pusher\Pusher;
 
-class ChannelTest extends PHPUnit_Framework_TestCase
+class ChannelTest extends TestCase
 {
     public function setUp()
     {

@@ -5,9 +5,10 @@ namespace NotificationChannels\PusherPushNotifications\Test;
 use Illuminate\Support\Arr;
 use NotificationChannels\PusherPushNotifications\Exceptions\CouldNotCreateMessage;
 use NotificationChannels\PusherPushNotifications\PusherMessage;
+use PHPUnit\Framework\TestCase;
 use PHPUnit_Framework_TestCase;
 
-class MessageTest extends PHPUnit_Framework_TestCase
+class MessageTest extends TestCase
 {
     /** @var \NotificationChannels\PusherPushNotifications\PusherMessage */
     protected $message;
@@ -108,11 +109,11 @@ class MessageTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('myIcon', Arr::get($this->message->toAndroid(), 'gcm.notification.icon'));
     }
 
-    /** @test */
+    /** @test
+     * @expectedException \NotificationChannels\PusherPushNotifications\Exceptions\CouldNotCreateMessage
+     */
     public function it_will_throw_an_exception_when_an_unsupported_platform_is_used()
     {
-        $this->setExpectedException(CouldNotCreateMessage::class);
-
         $this->message->platform('bla bla');
     }
 

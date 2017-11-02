@@ -129,7 +129,9 @@ class PusherMessage
      * Set an extra message to be sent to Android.
      *
      * @param \NotificationChannels\PusherPushNotifications\PusherMessage $message
+     *
      * @return $this
+     * @throws \NotificationChannels\PusherPushNotifications\Exceptions\CouldNotCreateMessage
      */
     public function withAndroid(PusherMessage $message)
     {
@@ -142,7 +144,9 @@ class PusherMessage
      * Set an extra message to be sent to iOS.
      *
      * @param \NotificationChannels\PusherPushNotifications\PusherMessage $message
+     *
      * @return $this
+     * @throws \NotificationChannels\PusherPushNotifications\Exceptions\CouldNotCreateMessage
      */
     public function withiOS(PusherMessage $message)
     {
@@ -155,7 +159,9 @@ class PusherMessage
      * Set an extra message to be sent to another platform.
      *
      * @param \NotificationChannels\PusherPushNotifications\PusherMessage $message
+     *
      * @return void
+     * @throws \NotificationChannels\PusherPushNotifications\Exceptions\CouldNotCreateMessage
      */
     private function withExtra(PusherMessage $message)
     {

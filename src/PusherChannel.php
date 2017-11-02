@@ -2,7 +2,7 @@
 
 namespace NotificationChannels\PusherPushNotifications;
 
-use Pusher;
+use Pusher\Pusher;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Events\NotificationFailed;
@@ -20,7 +20,8 @@ class PusherChannel
     private $events;
 
     /**
-     * @param \Pusher $pusher
+     * @param \Pusher                       $pusher
+     * @param \Illuminate\Events\Dispatcher $events
      */
     public function __construct(Pusher $pusher, Dispatcher $events)
     {
